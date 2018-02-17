@@ -1,0 +1,20 @@
+body .syntaxhighlighter .line {
+    white-space: pre-wrap !important;
+    min-width: 100%;
+  	word-wrap: break-word;
+  	word-break: break-all;
+}
+.prog_output
+{
+	margin-top: 15px;
+}
+.prog_output > pre{
+	white-space: pre-wrap;
+	min-width: 100%;
+  	word-wrap: break-word;
+  	word-break: break-all;
+}
+.prog_output > pre > img{
+    max-width: 100%;
+    height: auto;      
+}

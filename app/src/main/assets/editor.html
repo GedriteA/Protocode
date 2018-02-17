@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <style type="text/css" media="screen">
+        body {
+        overflow: hidden;
+        }
+
+        #editor {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        }
+    </style>
+
+
+
+    <script>
+  var editor;
+  
+  $(document).ready(function() {
+    $("#btnSubmit").click(function(){
+        
+    }); 
+	//alert('hi');
+});
+
+$(window).load(function(e) {
+    
+	//alert(editor.getValue());
+	//alert($('div.ace_content').text());
+	
+});
+
+    </script>
+
+</head>
+<body>
+
+<br/>
+<pre id="editor">
+#include  &lt;stdio.h&gt;
+int main(void)
+{
+printf("Hello, world!\n");
+return 0;
+}
+</pre>
+
+
+
+<script src="src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    editor = ace.edit("editor");
+    editor.getSession().setMode("ace/mode/java");
+	editor.getSession().setUseWrapMode(true);
+	editor.getSession().setNewLineMode("auto");
+
+	editor.setFontSize(15);
+	 editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    });
+
+    function showAndroidToast(toast) {
+        Android.showToast(toast);
+    }
+
+    function getSource() {
+        Android.setSourceCode(editor.getValue());
+    }
+
+    function copyToClipboard() {
+        Android.copyToClipboard(editor.getValue());
+    }
+
+    function paste(code) {
+        editor.insert(code);
+    }
+
+    function editedCode(code) {
+        clear();
+        editor.insert(code);
+    }
+
+
+    function clear() {
+        editor.setValue('');
+    }
+
+    function editCode() {
+        Android.editCode(editor.getValue());
+    }
+
+    function setTheme(theme)
+    {
+        editor.setTheme(theme);
+    }
+	
+	 var myVar = null;
+    function getSourceCode() {
+        myVar = Android.getSourceCode();
+        editor.setValue(myVar);
+    }
+
+
+    var myVa = null;
+    function New() {
+        myVa = Android.newCode();
+        editor.setValue(myVa);
+    }
+
+
+</script>
+
+
+</body>
+</html>

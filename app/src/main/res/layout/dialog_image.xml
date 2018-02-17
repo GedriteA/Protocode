@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/expanded_image"
+        android:layout_below="@+id/syntax"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/if1"/>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<resources>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+    <style name="TextViewLineNumber">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:padding">1.0dip</item>
+        <item name="android:layout_marginTop">2.0dip</item>
+        <item name="android:layout_marginRight">2.0dip</item>
+        <item name="android:inputType">textMultiLine</item>
+    </style>
+</resources>

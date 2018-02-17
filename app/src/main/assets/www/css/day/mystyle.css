@@ -1,0 +1,27 @@
+.prog_output
+{
+	background-color: #E2E4E5;
+	font-size: 15px;
+	border-left: 3px solid;
+	border-left-color: dimgrey;
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 20px;
+	width: auto;
+	float: left;
+	font-family: monospace;
+}
+
+.prog_code
+{
+	background-color: #ffffff;
+	border-left: 3px solid;
+	border-left-color:lightgreen;
+	padding-left:5px;
+	min-height: 100%;
+}
+.syntaxhighlighter { 
+	overflow-y: hidden !important; 
+	overflow-x: auto !important; 
+}

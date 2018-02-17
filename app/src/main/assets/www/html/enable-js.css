@@ -1,0 +1,20 @@
+body{
+  background-color: white;
+}
+
+.night-mode-body{
+  background-color: black;
+  color: white;
+}
+
+.question{
+  color: green;
+}
+
+.question-night-mode{
+  color: lightgreen;
+}
+
+img{
+  border:1px solid white;
+}

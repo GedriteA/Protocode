@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_playground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:id="@+id/web1">
+
+    </WebView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="right"
+        android:background="@color/colorPrimaryDark">
+        <Button
+            android:textSize="14.0dip"
+            android:id="@+id/openbutton"
+            android:background="@color/colorPrimary"
+            android:padding="0.0dip"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Open "/>
+        <Button
+            android:textSize="14.0dip"
+            android:id="@+id/newbutton"
+            android:background="@color/colorPrimary"
+            android:padding="0.0dip"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" New "/>
+        <Button
+            android:textSize="14.0dip"
+            android:id="@+id/savebutton"
+            android:background="@color/colorPrimary"
+            android:padding="0.0dip"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Save "/>
+        <Button
+            android:textSize="14.0dip"
+            android:id="@+id/runbutton"
+            android:textColor="@color/white"
+            android:padding="0.0dip"
+            android:textStyle="bold"
+            android:background="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Run"/>
+    </LinearLayout>
+
+</RelativeLayout>

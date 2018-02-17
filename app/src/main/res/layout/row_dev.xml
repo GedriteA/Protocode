@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    app:cardCornerRadius="2dp"
+                                    app:cardBackgroundColor="@android:color/white"
+                                    android:id="@+id/my_devCardView">
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imgID"
+                android:src="@drawable/ab1"
+                android:layout_marginRight="18dp"
+                android:layout_centerInParent="true"
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_marginTop="5dp"
+            android:text="Antonio Martin C.Lizardo"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txtPosition"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:text="Main Programmer"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txtCourse"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:text="BSM CS 4B"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:id="@+id/seperator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignLeft="@+id/word"
+            android:layout_below="@+id/word"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#000000" />
+        <TextView
+            android:id="@+id/txtSkills"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="left"
+            android:text="Skills:"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txtPl"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:text="Programming Langauges: C,Java,VB.net,"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txtSoftware"
+            android:layout_marginTop="15dp"
+
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:text="Software: Microsoft Office,Visual Studio,Android Studio"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txtProf"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:textAlignment="gravity"
+            android:text="Professional: Good at communication skills,Good interpersonal,Reasoning ability,Keen observer."
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="left"
+            android:text="Email: antoniomartin.lizardo@yahoo.com"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

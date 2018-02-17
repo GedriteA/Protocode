@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="10.0pt" android:textColor="#ff000000" android:gravity="center" android:id="@+id/inputTitle" android:layout_width="fill_parent" android:layout_height="64.0dip" android:text="@string/action_input" />
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@+id/inputMessage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="@string/input_msg" />
+    <EditText android:id="@+id/input" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="4.0dip" />
+
+</LinearLayout>

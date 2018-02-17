@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="10dp"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardBackgroundColor="@color/white"
+                                    android:id="@+id/my_cardview">
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/home"    
+            android:id="@+id/my_drillImage"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:id="@+id/drillText"
+            android:text="EASY"
+            android:textSize="30dp"/>
+
+
+
+
+
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
