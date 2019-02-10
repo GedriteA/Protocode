@@ -57,9 +57,14 @@ public class InputDialog  extends DialogFragment
                 .setPositiveButton("Run ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        new Task_finder().execute();
-                        InputDialog.this.getDialog().cancel();
-                        inputItem=input.getText().toString();
+                        try{
+                            new Task_finder().execute();
+                            InputDialog.this.getDialog().cancel();
+                            inputItem=input.getText().toString();
+                        }catch (Exception e){
+                            Log.e("Debug", "error: " + e.getMessage(), e);
+                        }
+
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -70,80 +75,81 @@ public class InputDialog  extends DialogFragment
 
 
 
-        return builder.create   ();
+        return builder.create  ();
 
     }
 
 
-    public class Task_finder extends AsyncTask<Void, Void, Void> {
-        private final ProgressDialog dialog = new ProgressDialog(getActivity());
-        // can use UI thread here
+        public class Task_finder extends AsyncTask<Void, Void, Void> {
+            private final ProgressDialog dialog = new ProgressDialog(getActivity());
+            // can use UI thread here
 
 
-        private Uri uri;
-        protected void onPreExecute() {
-            this.dialog.setMessage("Loading...");
-            this.dialog.setCancelable(false);
-            this.dialog.show();
-        }
+            private Uri uri;
 
-
-        @Override
-        protected Void doInBackground(Void... arg0) {
-            // TODO Auto-generated method stub
-            DataInputStream inStream = null;
-            HttpURLConnection httpURLConnection=null;
-            try {
-                URL url = new URL("http://rextester.com/rundotnet/api"); //Enter URL here
-                httpURLConnection = (HttpURLConnection)url.openConnection();
-                httpURLConnection.setDoOutput(true);
-                httpURLConnection.setRequestMethod("POST"); // here you are telling that it is a POST request, which can be changed into "PUT", "GET", "DELETE" etc.
-                httpURLConnection.setRequestProperty("Content-Type", "application/json"); // here you are setting the `Content-Type` for the data you are sending which is `application/json`
-                httpURLConnection.connect();
-
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("LanguageChoice", "29");
-                jsonObject.put("Program",code);
-                jsonObject.put("Input", inputItem);
-                jsonObject.put("CompilerArgs", "source_file.c -o a.exe");
-
-                DataOutputStream wr = new DataOutputStream(httpURLConnection.getOutputStream());
-                wr.writeBytes(jsonObject.toString());
-                wr.flush();
-                wr.close();
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
+            protected void onPreExecute() {
+                this.dialog.setMessage("Loading...");
+                this.dialog.setCancelable(false);
+                this.dialog.show();
             }
 
-            //Read Server Reponse
 
-            try {
-                    inStream = new DataInputStream (httpURLConnection.getInputStream() );
-                String str;
-                while (( str = inStream.readLine()) != null){
-                    Log.e("Debug","Server Response "+str);
-                    Compresult=str;
+            @Override
+            protected Void doInBackground(Void... arg0) {
+                // TODO Auto-generated method stub
+                DataInputStream inStream = null;
+                HttpURLConnection httpURLConnection = null;
+                try {
+                    URL url = new URL("https://rextester.com/rundotnet/api"); //Enter URL here
+                    httpURLConnection = (HttpURLConnection) url.openConnection();
+                    httpURLConnection.setDoOutput(true);
+                    httpURLConnection.setRequestMethod("POST"); // here you are telling that it is a POST request, which can be changed into "PUT", "GET", "DELETE" etc.
+                    httpURLConnection.setRequestProperty("Content-Type", "application/json"); // here you are setting the `Content-Type` for the data you are sending which is `application/json`
+                    httpURLConnection.connect();
 
+                    JSONObject jsonObject = new JSONObject();
+                    jsonObject.put("LanguageChoice", "29");
+                    jsonObject.put("Program", code);
+                    jsonObject.put("Input", inputItem);
+                    jsonObject.put("CompilerArgs", "source_file.c -o a.exe");
+
+                    DataOutputStream wr = new DataOutputStream(httpURLConnection.getOutputStream());
+                    wr.writeBytes(jsonObject.toString());
+                    wr.flush();
+                    wr.close();
+
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
 
-                inStream.close();
+                //Read Server Reponse
+
+                try {
+                    inStream = new DataInputStream(httpURLConnection.getInputStream());
+                    String str;
+                    while ((str = inStream.readLine()) != null) {
+                        Log.e("Debug", "Server Response " + str);
+                        Compresult = str;
+                        System.out.print(Compresult);
+
+                    }
+                    Log.e("Debug", "error: " + inStream.readLine());
+                    inStream.close();
+                } catch (IOException ioex) {
+                    Log.e("Debug", "error: " + ioex.getMessage(), ioex);
+                }
+
+                return null;
             }
-            catch (IOException ioex){
-                Log.e("Debug", "error: " + ioex.getMessage(), ioex);
-            }
 
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            try {
-
+            @Override
+            protected void onPostExecute(Void result) {
+                try {
+                    System.out.println(Compresult);
                     JSONObject jObject = new JSONObject(Compresult);
                     Result = jObject.getString("Result");
                     Error = jObject.getString("Errors");
@@ -157,13 +163,14 @@ public class InputDialog  extends DialogFragment
                     Error = null;
                     this.dialog.dismiss();
 
-            }catch (JSONException e){
-                Log.e("Debug", "error: " + e.getMessage(), e);
-            }
+                } catch (JSONException e) {
+                    Log.e("Debug", "error: " + e.getMessage(), e);
+                }
 
 
             }
         }
+
     }
 
 
