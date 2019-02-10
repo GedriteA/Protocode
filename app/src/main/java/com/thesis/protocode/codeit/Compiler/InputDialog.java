@@ -123,7 +123,7 @@ public class InputDialog  extends DialogFragment
             //Read Server Reponse
 
             try {
-                inStream = new DataInputStream (httpURLConnection.getInputStream() );
+                    inStream = new DataInputStream (httpURLConnection.getInputStream() );
                 String str;
                 while (( str = inStream.readLine()) != null){
                     Log.e("Debug","Server Response "+str);
@@ -143,20 +143,22 @@ public class InputDialog  extends DialogFragment
         @Override
         protected void onPostExecute(Void result) {
             try {
-                JSONObject jObject = new JSONObject(Compresult);
-                Result=jObject.getString("Result");
-                Error=jObject.getString("Errors");
-                Bundle bundle = new Bundle();
-                bundle.putString("Result",Result);
-                bundle.putString("Errors",Error);
-                OutputWindow output=new OutputWindow();
-                output.setArguments(bundle);
-                fragmentManager.beginTransaction().replace(R.id.frame,output).addToBackStack(null).commit();
-                Result=null;
-                Error=null;
-                this.dialog.dismiss();
-            }catch (JSONException e){
 
+                    JSONObject jObject = new JSONObject(Compresult);
+                    Result = jObject.getString("Result");
+                    Error = jObject.getString("Errors");
+                    Bundle bundle = new Bundle();
+                    bundle.putString("Result", Result);
+                    bundle.putString("Errors", Error);
+                    OutputWindow output = new OutputWindow();
+                    output.setArguments(bundle);
+                    fragmentManager.beginTransaction().replace(R.id.frame, output).addToBackStack(null).commit();
+                    Result = null;
+                    Error = null;
+                    this.dialog.dismiss();
+
+            }catch (JSONException e){
+                Log.e("Debug", "error: " + e.getMessage(), e);
             }
 
 
